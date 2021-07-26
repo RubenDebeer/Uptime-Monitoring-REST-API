@@ -17,14 +17,14 @@ const server = http.createServer(function(req,res){
     var path = parsedUrl.pathname;
     var trimedPath  = path.replace(/^\/+|\/+$/g,'');// This trimes the url path form slashes on the left and write but not in the middle of the path
 
+    //Get the quiry string as the object 
+    var quiryStringObject = parsedUrl.query;
+
     //Get the HTTP method 
-    var method = req.method.toLowerCase();
+    const method = req.method.toLowerCase();
 
-
-    //Send a response to the URl
-    console.log(`Request is received  on this path ${path}  with this method "${method}"`)
-
-    //Log the requests path
+    //Send a response to the URl     //Log the requests path
+    console.log(`Request is received  on this path ${path}  with this method ${method}`,quiryStringObject)
 })
 
 //Start the server and listen to a specific port number.
