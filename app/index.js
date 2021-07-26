@@ -17,8 +17,12 @@ const server = http.createServer(function(req,res){
     var path = parsedUrl.pathname;
     var trimedPath  = path.replace(/^\/+|\/+$/g,'');// This trimes the url path form slashes on the left and write but not in the middle of the path
 
+    //Get the HTTP method 
+    var method = req.method.toLowerCase();
+
+
     //Send a response to the URl
-    console.log(`Request is received  on this path ${trimedPath}`)
+    console.log(`Request is received  on this path ${path}  with this method "${method}"`)
 
     //Log the requests path
 })
